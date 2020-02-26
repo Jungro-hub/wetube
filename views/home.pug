@@ -7,7 +7,7 @@ block content
             a(href=routes.videoDetail(video.id))
                 +videoBlock({
                     id: video.id,
-                    videoFile: video.videoFile,
+                    videoFile: video.fileUrl,
                     title: video.title,
                     views: video.views,
                     description: video.description
