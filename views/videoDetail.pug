@@ -2,6 +2,17 @@ extends layouts/main
 include mixins/videoBlock
 
 block content
-    .video
-        +videoBlock
+    .video__player
+        video(src=`/${video.fileUrl}`, controls=true)
+    .video__info
+        a(href=routes.editVideo(video.id)) Edit Video
+        h5.video__title=video.title
+        span.video__views=video.views
+        p.video__description=video.description
+    .video__comments
+        if video.comment.length === 1
+            span.video__comments-number 1 comment
+        else 
+            span.video__comments-number #{video.comment.length} comments
+
             
